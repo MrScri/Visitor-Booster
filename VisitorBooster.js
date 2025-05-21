@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { SocksProxyAgent } = require('socks-proxy-agent');
 const readline = require('readline');
-const UserAgent = require('user-agents');  // 🆕 استدعاء مكتبة User-Agent
+const UserAgent = require('user-agents');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -22,7 +22,7 @@ rl.question('Please enter the blog URL: ', (targetURL) => {
 
     function visitSite() {
         const agent = new SocksProxyAgent(torProxy);
-        const userAgent = new UserAgent().toString();  // 🧠 توليد User-Agent عشوائي
+        const userAgent = new UserAgent().toString();
 
         axios.get(targetURL, {
             httpAgent: agent,
